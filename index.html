@@ -1,0 +1,290 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusto Pizza | Hospitalet de Llobregat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vintage-cream: #FDFBF7;
+            --vintage-brown: #3E2723;
+            --gold-accent: #C5A059;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--vintage-cream);
+            color: var(--vintage-brown);
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        .menu-card {
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .menu-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--gold-accent);
+            box-shadow: 0 10px 20px rgba(62, 39, 35, 0.05);
+        }
+        .section-divider {
+            width: 80px; height: 2px; background: var(--gold-accent); margin: 1.5rem auto;
+        }
+        .plus-btn-unique {
+            border: 1.5px solid var(--gold-accent);
+            color: var(--gold-accent);
+            width: 32px; height: 32px; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; transition: all 0.3s ease;
+            background: transparent;
+        }
+        .plus-btn-unique:hover {
+            background: var(--gold-accent);
+            color: white;
+            transform: scale(1.1) rotate(90deg);
+        }
+        #cart-sidebar {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(100%);
+        }
+        #cart-sidebar.open { transform: translateX(0); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-stone-200 py-4 px-6 flex justify-between items-center">
+        <div class="text-2xl font-bold tracking-tighter">GUSTÒ<span class="text-[var(--gold-accent)]">PIZZA</span></div>
+        <div class="flex items-center gap-4">
+            <button onclick="toggleCart()" class="relative p-2 bg-stone-100 rounded-full hover:bg-stone-200 transition">
+                🛒 <span id="cart-count" class="absolute -top-1 -right-1 bg-[var(--gold-accent)] text-white text-[9px] w-4 h-4 rounded-full flex items-center justify-center font-bold">0</span>
+            </button>
+            <a href="#asistente-pedido" class="bg-[var(--vintage-brown)] text-white px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-black transition">Pedir Online</a>
+        </div>
+    </nav>
+
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-80 bg-white z-[60] shadow-2xl p-6 overflow-y-auto border-l">
+        <div class="flex justify-between items-center mb-6 border-b pb-4">
+            <h2 class="text-xl italic">Tu Carrito</h2>
+            <button onclick="toggleCart()" class="text-2xl text-stone-300 hover:text-black">&times;</button>
+        </div>
+        <div id="cart-items" class="space-y-4 mb-8 min-h-[100px]">
+            <p class="text-gray-400 italic text-sm text-center">Tu carrito está vacío</p>
+        </div>
+        <div class="border-t pt-4">
+            <div class="flex justify-between font-bold text-lg mb-6"><span>Total:</span><span id="cart-total">0.00€</span></div>
+            <button onclick="goToCheckout()" class="w-full bg-[var(--gold-accent)] text-white py-4 rounded-xl font-bold uppercase tracking-widest hover:brightness-105 transition shadow-lg">Pedir</button>
+        </div>
+    </div>
+
+    <section id="inicio" class="relative h-[60vh] flex items-center justify-center text-center text-white">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1593504049359-7b7d92395fe5?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black/50"></div>
+        </div>
+        <h1 class="relative z-10 text-5xl md:text-7xl italic">Gustò Pizza</h1>
+    </section>
+
+    <main class="max-w-6xl mx-auto py-20 px-6">
+        
+        <div id="pizzas" class="mb-24">
+            <div class="text-center mb-12"><h2 class="text-4xl italic">Le Pizze Classiche</h2><div class="section-divider"></div></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Margherita</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">6.50€</span><button onclick="addToCart('Margherita', 6.50)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Pomodoro, mozzarella, albahaca fresca y aceite de oliva.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Quattro Formaggi</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">9.90€</span><button onclick="addToCart('Quattro Formaggi', 9.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Mozzarella, queso de cabra, gorgonzola y edam fundidos.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg border-2 border-[var(--gold-accent)] shadow-sm">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Tartufo Especial</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">12.90€</span><button onclick="addToCart('Tartufo Especial', 12.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Champiñones, huevo, parmesano y crema de trufa negra.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Diavola</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Diavola', 10.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Tomate, mozzarella, chorizo picante y pimiento rojo asado.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Vegetariana</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Vegetariana', 10.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Verduras de temporada horneadas, champiñones y mozzarella.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Prosciutto e Funghi</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">9.90€</span><button onclick="addToCart('Prosciutto e Funghi', 9.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Tomate, mozzarella, jamón dulce y champiñones.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="calzoni" class="mb-24">
+            <div class="text-center mb-12"><h2 class="text-4xl italic">I Calzoni</h2><div class="section-divider"></div></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Tradizionale</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">10.50€</span><button onclick="addToCart('Calzone Tradizionale', 10.50)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Tomate, mozzarella, jamón dulce y champiñones.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Fiorentina</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Calzone Fiorentina', 10.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Chorizo picante, champiñones frescos y cebolla caramelizada.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Piemontese</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Calzone Piemontese', 10.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Mezcla de cuatro quesos italianos y nueces troceadas.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="ensaladas" class="mb-24">
+            <div class="text-center mb-12"><h2 class="text-4xl italic">Le Insalate</h2><div class="section-divider"></div></div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Burrata</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">8.00€</span><button onclick="addToCart('Ensalada Burrata', 8.00)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Burrata fresca, rúcula, cherry y pesto casero.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Caprino</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">8.50€</span><button onclick="addToCart('Ensalada Caprino', 8.50)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Queso de cabra, nueces y cebolla frita.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="bebidas" class="mb-24">
+            <div class="text-center mb-12"><h2 class="text-4xl italic">Bevande e Vini</h2><div class="section-divider"></div></div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b border-stone-100 pb-2"><span>Agua Mineral</span><div class="flex items-center gap-4"><span>2.00€</span><button onclick="addToCart('Agua Mineral', 2.00)" class="plus-btn-unique">+</button></div></div>
+                    <div class="flex justify-between items-center border-b border-stone-100 pb-2"><span>Refrescos</span><div class="flex items-center gap-4"><span>2.50€</span><button onclick="addToCart('Refresco', 2.50)" class="plus-btn-unique">+</button></div></div>
+                    <div class="flex justify-between items-center border-b border-stone-100 pb-2"><span>San Miguel</span><div class="flex items-center gap-4"><span>2.50€</span><button onclick="addToCart('Cerveza San Miguel', 2.50)" class="plus-btn-unique">+</button></div></div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b border-stone-100 pb-2"><span>Lambrusco</span><div class="flex items-center gap-4"><span>13.50€</span><button onclick="addToCart('Lambrusco', 13.50)" class="plus-btn-unique">+</button></div></div>
+                    <div class="flex justify-between items-center border-b border-stone-100 pb-2"><span>Vino Tinto</span><div class="flex items-center gap-4"><span>12.00€</span><button onclick="addToCart('Vino Tinto', 12.00)" class="plus-btn-unique">+</button></div></div>
+                </div>
+            </div>
+        </div>
+
+        <section id="asistente-pedido" class="py-20 border-t">
+            <div class="bg-white p-10 rounded-3xl shadow-xl max-w-3xl mx-auto border border-stone-100">
+                <h2 class="text-2xl italic mb-6">Confirmar tu Pedido</h2>
+                <div id="order-preview-container" class="hidden mb-6 animate-pulse">
+                    <div id="order-preview" class="p-6 bg-[var(--vintage-cream)] rounded-xl border border-[var(--gold-accent)] whitespace-pre-wrap font-mono text-sm mb-4"></div>
+                    <button id="final-submit-btn" onclick="sendOrder()" class="w-full bg-[var(--gold-accent)] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[var(--vintage-brown)] transition shadow-lg">
+                        ENVIAR PEDIDO A COCINA 🍕
+                    </button>
+                </div>
+                <button onclick="formatOrder()" class="w-full bg-[var(--vintage-brown)] text-white py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-black transition">Generar Ticket de Revisión</button>
+            </div>
+        </section>
+    </main>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+        // استبدل ببياناتك الخاصة من Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSy...", 
+            authDomain: "gusto-pizza.firebaseapp.com",
+            databaseURL: "https://gusto-pizza-default-rtdb.firebaseio.com",
+            projectId: "gusto-pizza",
+            storageBucket: "gusto-pizza.appspot.com",
+            appId: "1:..."
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        window.sendOrder = async function() {
+            if (window.cart.length === 0) return;
+
+            const btn = document.getElementById('final-submit-btn');
+            btn.innerText = "Procesando...";
+            btn.disabled = true;
+
+            const orderData = {
+                items: window.cart,
+                total: window.cart.reduce((sum, item) => sum + item.price, 0),
+                timestamp: new Date().toLocaleString(),
+                status: "nuevo"
+            };
+
+            try {
+                const ordersRef = ref(db, 'orders');
+                const newOrderRef = push(ordersRef);
+                await set(newOrderRef, orderData);
+                
+                alert("¡Pedido recibido con éxito!");
+                window.cart = [];
+                window.updateCartUI();
+                document.getElementById('order-preview-container').classList.add('hidden');
+            } catch (error) {
+                alert("Error de conexión. Intente de nuevo.");
+            } finally {
+                btn.innerText = "ENVIAR PEDIDO A COCINA 🍕";
+                btn.disabled = false;
+            }
+        };
+    </script>
+
+    <script>
+        window.cart = [];
+        function toggleCart() { document.getElementById('cart-sidebar').classList.toggle('open'); }
+        
+        function addToCart(name, price) {
+            window.cart.push({ name, price });
+            updateCartUI();
+            const count = document.getElementById('cart-count');
+            count.style.transform = "scale(1.5)";
+            setTimeout(() => count.style.transform = "scale(1)", 200);
+        }
+
+        function updateCartUI() {
+            const itemsContainer = document.getElementById('cart-items');
+            const totalLabel = document.getElementById('cart-total');
+            const countLabel = document.getElementById('cart-count');
+            countLabel.innerText = window.cart.length;
+
+            if (window.cart.length === 0) {
+                itemsContainer.innerHTML = '<p class="text-gray-400 italic text-sm text-center">Tu carrito está vacío</p>';
+                totalLabel.innerText = '0.00€';
+                return;
+            }
+
+            let html = '', total = 0;
+            window.cart.forEach((item, index) => {
+                html += `<div class="flex justify-between items-center text-sm border-b pb-3 border-stone-50">
+                    <div class="flex flex-col"><span class="font-bold">${item.name}</span><span class="text-[10px] text-stone-400 font-bold">${item.price.toFixed(2)}€</span></div>
+                    <button onclick="removeFromCart(${index})" class="text-stone-300 hover:text-red-500 font-bold">✕</button></div>`;
+                total += item.price;
+            });
+            itemsContainer.innerHTML = html;
+            totalLabel.innerText = total.toFixed(2) + '€';
+        }
+
+        function removeFromCart(index) { window.cart.splice(index, 1); updateCartUI(); }
+        function goToCheckout() { toggleCart(); document.getElementById('asistente-pedido').scrollIntoView({ behavior: 'smooth' }); }
+        
+        function formatOrder() {
+            if (window.cart.length === 0) return;
+            const container = document.getElementById('order-preview-container');
+            container.classList.remove('hidden');
+            let summary = window.cart.map(item => `- ${item.name} (${item.price.toFixed(2)}€)`).join('\n');
+            let total = window.cart.reduce((sum, item) => sum + item.price, 0);
+            document.getElementById('order-preview').innerText = `🍕 RESUMEN DE TU PEDIDO:\n--------------------------\n${summary}\n--------------------------\nTOTAL: ${total.toFixed(2)}€`;
+            container.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
