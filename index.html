@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -100,85 +101,20 @@
                     <div class="flex items-center gap-3"><span class="font-bold">9.90€</span><button onclick="addToCart('Quattro Formaggi', 9.90)" class="plus-btn-unique">+</button></div></div>
                     <p class="text-sm text-gray-500 italic">Mozzarella, queso de cabra, gorgonzola y edam fundidos.</p>
                 </div>
-                <div class="menu-card p-6 rounded-lg border-2 border-[var(--gold-accent)] shadow-sm">
-                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Tartufo Especial</h4>
-                    <div class="flex items-center gap-3"><span class="font-bold">12.90€</span><button onclick="addToCart('Tartufo Especial', 12.90)" class="plus-btn-unique">+</button></div></div>
-                    <p class="text-sm text-gray-500 italic">Champiñones, huevo, parmesano y crema de trufa negra.</p>
-                </div>
-                <div class="menu-card p-6 rounded-lg">
-                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Diavola</h4>
-                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Diavola', 10.90)" class="plus-btn-unique">+</button></div></div>
-                    <p class="text-sm text-gray-500 italic">Tomate, mozzarella, chorizo picante y pimiento rojo asado.</p>
-                </div>
-                <div class="menu-card p-6 rounded-lg">
-                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Vegetariana</h4>
-                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Vegetariana', 10.90)" class="plus-btn-unique">+</button></div></div>
-                    <p class="text-sm text-gray-500 italic">Verduras de temporada horneadas, champiñones y mozzarella.</p>
-                </div>
-                <div class="menu-card p-6 rounded-lg">
-                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Prosciutto e Funghi</h4>
-                    <div class="flex items-center gap-3"><span class="font-bold">9.90€</span><button onclick="addToCart('Prosciutto e Funghi', 9.90)" class="plus-btn-unique">+</button></div></div>
-                    <p class="text-sm text-gray-500 italic">Tomate, mozzarella, jamón dulce y champiñones.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="calzoni" class="mb-24">
-            <div class="text-center mb-12"><h2 class="text-4xl italic">I Calzoni</h2><div class="section-divider"></div></div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="menu-card p-6 rounded-lg">
-                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Tradizionale</h4>
-                    <div class="flex items-center gap-3"><span class="font-bold">10.50€</span><button onclick="addToCart('Calzone Tradizionale', 10.50)" class="plus-btn-unique">+</button></div></div>
-                    <p class="text-sm text-gray-500 italic">Tomate, mozzarella, jamón dulce y champiñones.</p>
-                </div>
-                <div class="menu-card p-6 rounded-lg">
-                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Fiorentina</h4>
-                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Calzone Fiorentina', 10.90)" class="plus-btn-unique">+</button></div></div>
-                    <p class="text-sm text-gray-500 italic">Chorizo picante, champiñones frescos y cebolla caramelizada.</p>
-                </div>
-                <div class="menu-card p-6 rounded-lg">
-                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Piemontese</h4>
-                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Calzone Piemontese', 10.90)" class="plus-btn-unique">+</button></div></div>
-                    <p class="text-sm text-gray-500 italic">Mezcla de cuatro quesos italianos y nueces troceadas.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="ensaladas" class="mb-24">
-            <div class="text-center mb-12"><h2 class="text-4xl italic">Le Insalate</h2><div class="section-divider"></div></div>
-            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <div class="menu-card p-6 rounded-lg">
-                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Burrata</h4>
-                    <div class="flex items-center gap-3"><span class="font-bold">8.00€</span><button onclick="addToCart('Ensalada Burrata', 8.00)" class="plus-btn-unique">+</button></div></div>
-                    <p class="text-sm text-gray-500 italic">Burrata fresca, rúcula, cherry y pesto casero.</p>
-                </div>
-                <div class="menu-card p-6 rounded-lg">
-                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Caprino</h4>
-                    <div class="flex items-center gap-3"><span class="font-bold">8.50€</span><button onclick="addToCart('Ensalada Caprino', 8.50)" class="plus-btn-unique">+</button></div></div>
-                    <p class="text-sm text-gray-500 italic">Queso de cabra, nueces y cebolla frita.</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="bebidas" class="mb-24">
-            <div class="text-center mb-12"><h2 class="text-4xl italic">Bevande e Vini</h2><div class="section-divider"></div></div>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center border-b border-stone-100 pb-2"><span>Agua Mineral</span><div class="flex items-center gap-4"><span>2.00€</span><button onclick="addToCart('Agua Mineral', 2.00)" class="plus-btn-unique">+</button></div></div>
-                    <div class="flex justify-between items-center border-b border-stone-100 pb-2"><span>Refrescos</span><div class="flex items-center gap-4"><span>2.50€</span><button onclick="addToCart('Refresco', 2.50)" class="plus-btn-unique">+</button></div></div>
-                    <div class="flex justify-between items-center border-b border-stone-100 pb-2"><span>San Miguel</span><div class="flex items-center gap-4"><span>2.50€</span><button onclick="addToCart('Cerveza San Miguel', 2.50)" class="plus-btn-unique">+</button></div></div>
-                </div>
-                <div class="space-y-4">
-                    <div class="flex justify-between items-center border-b border-stone-100 pb-2"><span>Lambrusco</span><div class="flex items-center gap-4"><span>13.50€</span><button onclick="addToCart('Lambrusco', 13.50)" class="plus-btn-unique">+</button></div></div>
-                    <div class="flex justify-between items-center border-b border-stone-100 pb-2"><span>Vino Tinto</span><div class="flex items-center gap-4"><span>12.00€</span><button onclick="addToCart('Vino Tinto', 12.00)" class="plus-btn-unique">+</button></div></div>
-                </div>
             </div>
         </div>
 
         <section id="asistente-pedido" class="py-20 border-t">
             <div class="bg-white p-10 rounded-3xl shadow-xl max-w-3xl mx-auto border border-stone-100">
                 <h2 class="text-2xl italic mb-6">Confirmar tu Pedido</h2>
-                <div id="order-preview-container" class="hidden mb-6 animate-pulse">
+                
+                <div class="mb-6">
+                    <label class="block text-xs uppercase tracking-widest text-stone-400 mb-2">Tu número de teléfono (WhatsApp):</label>
+                    <input type="tel" id="customer-phone" placeholder="Ej: +34 600 000 000" 
+                        class="w-full p-4 rounded-xl border border-stone-200 focus:border-[#C5A059] outline-none transition text-black bg-white">
+                </div>
+
+                <div id="order-preview-container" class="hidden mb-6">
                     <div id="order-preview" class="p-6 bg-[var(--vintage-cream)] rounded-xl border border-[var(--gold-accent)] whitespace-pre-wrap font-mono text-sm mb-4"></div>
                     <button id="final-submit-btn" onclick="sendOrder()" class="w-full bg-[var(--gold-accent)] text-white py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[var(--vintage-brown)] transition shadow-lg">
                         ENVIAR PEDIDO A COCINA 🍕
@@ -189,24 +125,30 @@
         </section>
     </main>
 
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore-compat.js"></script>
 
-        // استبدل ببياناتك الخاصة من Firebase
+    <script>
         const firebaseConfig = {
-            apiKey: "AIzaSy...", 
-            authDomain: "gusto-pizza.firebaseapp.com",
-            databaseURL: "https://gusto-pizza-default-rtdb.firebaseio.com",
-            projectId: "gusto-pizza",
-            storageBucket: "gusto-pizza.appspot.com",
-            appId: "1:..."
+            apiKey: "AIzaSyC1rufxQQLs2tmqrDS2VoqrtXQ1ZGhZ1lk",
+            authDomain: "gustopizz1.firebaseapp.com",
+            projectId: "gustopizz1",
+            storageBucket: "gustopizz1.firebasestorage.app",
+            messagingSenderId: "31091101316",
+            appId: "1:31091101316:web:f377e64febea669cbe7cd1"
         };
 
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
 
         window.sendOrder = async function() {
+            // سحب رقم الهاتف والتأكد منه
+            const phoneInput = document.getElementById('customer-phone').value;
+            if (!phoneInput || phoneInput.length < 8) {
+                alert("Por favor, introduce un número de teléfono válido para contactarte.");
+                return;
+            }
+
             if (window.cart.length === 0) return;
 
             const btn = document.getElementById('final-submit-btn');
@@ -214,6 +156,7 @@
             btn.disabled = true;
 
             const orderData = {
+                phone: phoneInput, // حفظ الهاتف هنا
                 items: window.cart,
                 total: window.cart.reduce((sum, item) => sum + item.price, 0),
                 timestamp: new Date().toLocaleString(),
@@ -221,69 +164,50 @@
             };
 
             try {
-                const ordersRef = ref(db, 'orders');
-                const newOrderRef = push(ordersRef);
-                await set(newOrderRef, orderData);
+                // إرسال البيانات إلى Firestore
+                const docRef = await db.collection("orders").add(orderData);
                 
-                alert("¡Pedido recibido con éxito!");
-                window.cart = [];
-                window.updateCartUI();
-                document.getElementById('order-preview-container').classList.add('hidden');
+                // الانتقال لصفحة النجاح مع تمرير رقم الطلب
+                window.location.href = "success.html?order=" + docRef.id; 
+                
             } catch (error) {
-                alert("Error de conexión. Intente de nuevo.");
+                console.error(error);
+                alert("Error: Asegúrate de activar 'Firestore Database' y poner las Rules en 'true'.");
             } finally {
                 btn.innerText = "ENVIAR PEDIDO A COCINA 🍕";
                 btn.disabled = false;
             }
         };
-    </script>
 
-    <script>
         window.cart = [];
         function toggleCart() { document.getElementById('cart-sidebar').classList.toggle('open'); }
-        
         function addToCart(name, price) {
             window.cart.push({ name, price });
             updateCartUI();
-            const count = document.getElementById('cart-count');
-            count.style.transform = "scale(1.5)";
-            setTimeout(() => count.style.transform = "scale(1)", 200);
         }
-
         function updateCartUI() {
             const itemsContainer = document.getElementById('cart-items');
             const totalLabel = document.getElementById('cart-total');
-            const countLabel = document.getElementById('cart-count');
-            countLabel.innerText = window.cart.length;
-
+            document.getElementById('cart-count').innerText = window.cart.length;
             if (window.cart.length === 0) {
                 itemsContainer.innerHTML = '<p class="text-gray-400 italic text-sm text-center">Tu carrito está vacío</p>';
                 totalLabel.innerText = '0.00€';
                 return;
             }
-
             let html = '', total = 0;
             window.cart.forEach((item, index) => {
-                html += `<div class="flex justify-between items-center text-sm border-b pb-3 border-stone-50">
-                    <div class="flex flex-col"><span class="font-bold">${item.name}</span><span class="text-[10px] text-stone-400 font-bold">${item.price.toFixed(2)}€</span></div>
-                    <button onclick="removeFromCart(${index})" class="text-stone-300 hover:text-red-500 font-bold">✕</button></div>`;
+                html += `<div class="flex justify-between mb-2"><span>${item.name}</span><span>${item.price.toFixed(2)}€</span></div>`;
                 total += item.price;
             });
             itemsContainer.innerHTML = html;
             totalLabel.innerText = total.toFixed(2) + '€';
         }
-
-        function removeFromCart(index) { window.cart.splice(index, 1); updateCartUI(); }
-        function goToCheckout() { toggleCart(); document.getElementById('asistente-pedido').scrollIntoView({ behavior: 'smooth' }); }
-        
+        function goToCheckout() { toggleCart(); document.getElementById('asistente-pedido').scrollIntoView(); }
         function formatOrder() {
             if (window.cart.length === 0) return;
-            const container = document.getElementById('order-preview-container');
-            container.classList.remove('hidden');
-            let summary = window.cart.map(item => `- ${item.name} (${item.price.toFixed(2)}€)`).join('\n');
-            let total = window.cart.reduce((sum, item) => sum + item.price, 0);
-            document.getElementById('order-preview').innerText = `🍕 RESUMEN DE TU PEDIDO:\n--------------------------\n${summary}\n--------------------------\nTOTAL: ${total.toFixed(2)}€`;
-            container.scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('order-preview-container').classList.remove('hidden');
+            let summary = window.cart.map(item => `- ${item.name}`).join('\n');
+            document.getElementById('order-preview').innerText = `RESUMEN:\n${summary}`;
         }
     </script>
 </body>
