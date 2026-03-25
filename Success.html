@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Pedido Confirmado! | Gustò Pizza</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body class="flex items-center justify-center h-screen bg-[#FDFBF7] text-[#3E2723]">
+
+    <div class="bg-white p-10 rounded-3xl shadow-xl border border-stone-100 max-w-md mx-4 text-center">
+        <div class="flex justify-center mb-6">
+            <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center text-green-500 text-3xl">✓</div>
+        </div>
+
+        <h1 class="text-4xl italic mb-4 font-serif">¡Gracias!</h1>
+        <p class="text-stone-500 mb-6">Tu pedido ha sido enviado a nuestra cocina.</p>
+        
+        <div class="bg-stone-50 p-4 rounded-xl border border-dashed border-[#C5A059] mb-8">
+            <p class="text-[10px] uppercase tracking-widest text-stone-400 mb-1">Tu número de pedido:</p>
+            <p id="order-number" class="font-mono font-bold text-[#C5A059]">Cargando...</p>
+        </div>
+
+        <a href="index.html" class="block w-full bg-[#C5A059] text-white py-4 rounded-xl font-bold uppercase tracking-widest hover:brightness-105 transition shadow-lg">
+            Volver al Menú
+        </a>
+    </div>
+
+    <script>
+        // كود صغير لقراءة الرقم من الرابط
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('order');
+        if (orderId) {
+            document.getElementById('order-number').innerText = orderId;
+        } else {
+            document.getElementById('order-number').innerText = "GENERANDO...";
+        }
+    </script>
+</body>
+</html>
