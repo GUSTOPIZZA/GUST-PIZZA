@@ -130,7 +130,7 @@
                 <div class="menu-card p-6 rounded-lg">
                     <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Tradizionale</h4>
                     <div class="flex items-center gap-3"><span class="font-bold">10.50€</span><button onclick="addToCart('Calzone Tradizionale', 10.50)" class="plus-btn-unique">+</button></div></div>
-                    <p class="text-sm text-gray-500 italic">Relleno de tomate, mozzarella, jamón dulce y champiñones.</p>
+                    <p class="text-sm text-gray-500 italic">Tomate, mozzarella, jamón dulce y champiñones.</p>
                 </div>
                 <div class="menu-card p-6 rounded-lg">
                     <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Fiorentina</h4>
@@ -156,25 +156,25 @@
                 <div class="menu-card p-6 rounded-lg">
                     <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Caprino</h4>
                     <div class="flex items-center gap-3"><span class="font-bold">8.50€</span><button onclick="addToCart('Ensalada Caprino', 8.50)" class="plus-btn-unique">+</button></div></div>
-                    <p class="text-sm text-gray-500 italic">Mezclum de hojas verdes, queso de cabra, nueces y cebolla frita.</p>
+                    <p class="text-sm text-gray-500 italic">Mezclum de hojas verdes, queso de cabرا, nueces y cebolla frita.</p>
                 </div>
             </div>
         </div>
 
         <div id="bebidas" class="mb-24">
             <div class="text-center mb-12"><h2 class="text-4xl italic">Bevande e Vini</h2><div class="section-divider"></div></div>
-            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-sm">
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 <div class="bg-white p-6 rounded-lg border border-stone-100">
-                    <h3 class="font-bold uppercase mb-4 border-b pb-2">Refrescos y Cervezas</h3>
-                    <div class="flex justify-between mb-4"><span>Agua Mineral / Gas</span><div class="flex items-center gap-3"><span>2.00€</span><button onclick="addToCart('Agua', 2.00)" class="plus-btn-unique">+</button></div></div>
-                    <div class="flex justify-between mb-4"><span>Refrescos</span><div class="flex items-center gap-3"><span>2.50€</span><button onclick="addToCart('Refresco', 2.50)" class="plus-btn-unique">+</button></div></div>
-                    <div class="flex justify-between"><span>Cerveza San Miguel</span><div class="flex items-center gap-3"><span>2.50€</span><button onclick="addToCart('Cerveza', 2.50)" class="plus-btn-unique">+</button></div></div>
+                    <h3 class="font-bold uppercase mb-4 border-b pb-2 text-sm">Refrescos y Cervezas</h3>
+                    <div class="flex justify-between mb-4 text-sm"><span>Agua</span><div class="flex items-center gap-3"><span>2.00€</span><button onclick="addToCart('Agua Mineral', 2.00)" class="plus-btn-unique">+</button></div></div>
+                    <div class="flex justify-between mb-4 text-sm"><span>Refrescos</span><div class="flex items-center gap-3"><span>2.50€</span><button onclick="addToCart('Refresco', 2.50)" class="plus-btn-unique">+</button></div></div>
+                    <div class="flex justify-between text-sm"><span>Cerveza San Miguel</span><div class="flex items-center gap-3"><span>2.50€</span><button onclick="addToCart('Cerveza San Miguel', 2.50)" class="plus-btn-unique">+</button></div></div>
                 </div>
                 <div class="bg-white p-6 rounded-lg border border-stone-100">
-                    <h3 class="font-bold uppercase mb-4 border-b pb-2">Nuestra Bodega</h3>
-                    <div class="flex justify-between mb-4"><span>Lambrusco</span><div class="flex items-center gap-3"><span>13.50€</span><button onclick="addToCart('Vino Lambrusco', 13.50)" class="plus-btn-unique">+</button></div></div>
-                    <div class="flex justify-between mb-4"><span>Vino Tinto</span><div class="flex items-center gap-3"><span>12.00€</span><button onclick="addToCart('Vino Tinto', 12.00)" class="plus-btn-unique">+</button></div></div>
-                    <div class="flex justify-between"><span>Vino Blanco</span><div class="flex items-center gap-3"><span>12.00€</span><button onclick="addToCart('Vino Blanco', 12.00)" class="plus-btn-unique">+</button></div></div>
+                    <h3 class="font-bold uppercase mb-4 border-b pb-2 text-sm">Nuestra Bodega</h3>
+                    <div class="flex justify-between mb-4 text-sm"><span>Lambrusco</span><div class="flex items-center gap-3"><span>13.50€</span><button onclick="addToCart('Vino Lambrusco', 13.50)" class="plus-btn-unique">+</button></div></div>
+                    <div class="flex justify-between mb-4 text-sm"><span>Vino Tinto</span><div class="flex items-center gap-3"><span>12.00€</span><button onclick="addToCart('Vino Tinto', 12.00)" class="plus-btn-unique">+</button></div></div>
+                    <div class="flex justify-between text-sm"><span>Vino Blanco</span><div class="flex items-center gap-3"><span>12.00€</span><button onclick="addToCart('Vino Blanco', 12.00)" class="plus-btn-unique">+</button></div></div>
                 </div>
             </div>
         </div>
@@ -272,8 +272,9 @@
             document.getElementById('order-preview').innerText = `RESUMEN DEL PEDIDO:\n${summary}\n\nTOTAL: ${total.toFixed(2)}€`;
         }
 
+        // --- الدالة المعدلة لعرض رقم الهاتف في قاعدة البيانات ---
         window.sendOrder = async function() {
-            const phoneInput = document.getElementById('customer-phone').value;
+            const phoneInput = document.getElementById('customer-phone').value.trim();
             if (!phoneInput || phoneInput.length < 8) {
                 alert("Por favor, introduce un número de teléfono válido.");
                 return;
@@ -285,20 +286,26 @@
             btn.innerText = "Enviando...";
             btn.disabled = true;
 
+            // إنشاء معرف فريد: رقم الهاتف + وقت الطلب (ساعة، دقيقة، ثانية)
+            const now = new Date();
+            const timeTag = `${now.getHours()}${now.getMinutes()}${now.getSeconds()}`;
+            const orderDocId = `${phoneInput}_${timeTag}`;
+
             const orderData = {
                 phone: phoneInput,
                 items: window.cart,
                 total: window.cart.reduce((sum, item) => sum + item.price, 0),
-                timestamp: new Date().toLocaleString(),
+                timestamp: now.toLocaleString(),
                 status: "nuevo"
             };
 
             try {
-                const docRef = await db.collection("orders").add(orderData);
-                window.location.href = "success.html?order=" + docRef.id; 
+                // حفظ الوثيقة باستخدام المعرف الذي يبدأ برقم الهاتف
+                await db.collection("orders").doc(orderDocId).set(orderData);
+                window.location.href = "success.html?order=" + orderDocId; 
             } catch (error) {
                 console.error(error);
-                alert("Error al enviar el pedido. Verifique su conexión.");
+                alert("Error: Asegúrate de que las Firestore Rules estén activadas.");
             } finally {
                 btn.innerText = "ENVIAR PEDIDO A COCINA 🍕";
                 btn.disabled = false;
