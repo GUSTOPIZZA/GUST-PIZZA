@@ -101,6 +101,81 @@
                     <div class="flex items-center gap-3"><span class="font-bold">9.90€</span><button onclick="addToCart('Quattro Formaggi', 9.90)" class="plus-btn-unique">+</button></div></div>
                     <p class="text-sm text-gray-500 italic">Mozzarella, queso de cabra, gorgonzola y edam fundidos.</p>
                 </div>
+                <div class="menu-card p-6 rounded-lg border-2 border-[var(--gold-accent)]">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Tartufo Especial</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">12.90€</span><button onclick="addToCart('Tartufo Especial', 12.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Champiñones, huevo, parmesano y nuestra exclusiva crema de trufa negra.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Diavola</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Diavola', 10.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Tomate, mozzarella, chorizo picante y pimiento rojo asado.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Vegetariana</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Vegetariana', 10.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Mix de verduras de temporada horneadas, champiñones y mozzarella.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Prosciutto e Funghi</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">9.90€</span><button onclick="addToCart('Prosciutto e Funghi', 9.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Tomate, mozzarella, jamón dulce y champiñones laminados.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="calzoni" class="mb-24">
+            <div class="text-center mb-12"><h2 class="text-4xl italic">I Calzoni</h2><div class="section-divider"></div></div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Tradizionale</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">10.50€</span><button onclick="addToCart('Calzone Tradizionale', 10.50)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Relleno de tomate, mozzarella, jamón dulce y champiñones.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Fiorentina</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Calzone Fiorentina', 10.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Chorizo picante, champiñones frescos y cebolla caramelizada.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Piemontese</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">10.90€</span><button onclick="addToCart('Calzone Piemontese', 10.90)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Mezcla de cuatro quesos italianos y nueces troceadas.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="ensaladas" class="mb-24">
+            <div class="text-center mb-12"><h2 class="text-4xl italic">Le Insalate</h2><div class="section-divider"></div></div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Burrata</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">8.00€</span><button onclick="addToCart('Ensalada Burrata', 8.00)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Burrata fresca, rúcula, tomate cherry y pesto genovese.</p>
+                </div>
+                <div class="menu-card p-6 rounded-lg">
+                    <div class="flex justify-between items-center mb-3"><h4 class="uppercase font-bold text-sm">Caprino</h4>
+                    <div class="flex items-center gap-3"><span class="font-bold">8.50€</span><button onclick="addToCart('Ensalada Caprino', 8.50)" class="plus-btn-unique">+</button></div></div>
+                    <p class="text-sm text-gray-500 italic">Mezclum de hojas verdes, queso de cabra, nueces y cebolla frita.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="bebidas" class="mb-24">
+            <div class="text-center mb-12"><h2 class="text-4xl italic">Bevande e Vini</h2><div class="section-divider"></div></div>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-sm">
+                <div class="bg-white p-6 rounded-lg border border-stone-100">
+                    <h3 class="font-bold uppercase mb-4 border-b pb-2">Refrescos y Cervezas</h3>
+                    <div class="flex justify-between mb-4"><span>Agua Mineral / Gas</span><div class="flex items-center gap-3"><span>2.00€</span><button onclick="addToCart('Agua', 2.00)" class="plus-btn-unique">+</button></div></div>
+                    <div class="flex justify-between mb-4"><span>Refrescos</span><div class="flex items-center gap-3"><span>2.50€</span><button onclick="addToCart('Refresco', 2.50)" class="plus-btn-unique">+</button></div></div>
+                    <div class="flex justify-between"><span>Cerveza San Miguel</span><div class="flex items-center gap-3"><span>2.50€</span><button onclick="addToCart('Cerveza', 2.50)" class="plus-btn-unique">+</button></div></div>
+                </div>
+                <div class="bg-white p-6 rounded-lg border border-stone-100">
+                    <h3 class="font-bold uppercase mb-4 border-b pb-2">Nuestra Bodega</h3>
+                    <div class="flex justify-between mb-4"><span>Lambrusco</span><div class="flex items-center gap-3"><span>13.50€</span><button onclick="addToCart('Vino Lambrusco', 13.50)" class="plus-btn-unique">+</button></div></div>
+                    <div class="flex justify-between mb-4"><span>Vino Tinto</span><div class="flex items-center gap-3"><span>12.00€</span><button onclick="addToCart('Vino Tinto', 12.00)" class="plus-btn-unique">+</button></div></div>
+                    <div class="flex justify-between"><span>Vino Blanco</span><div class="flex items-center gap-3"><span>12.00€</span><button onclick="addToCart('Vino Blanco', 12.00)" class="plus-btn-unique">+</button></div></div>
+                </div>
             </div>
         </div>
 
@@ -141,22 +216,77 @@
         firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
+        window.cart = [];
+
+        function toggleCart() { document.getElementById('cart-sidebar').classList.toggle('open'); }
+
+        function addToCart(name, price) {
+            window.cart.push({ name, price });
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const itemsContainer = document.getElementById('cart-items');
+            const totalLabel = document.getElementById('cart-total');
+            document.getElementById('cart-count').innerText = window.cart.length;
+            
+            if (window.cart.length === 0) {
+                itemsContainer.innerHTML = '<p class="text-gray-400 italic text-sm text-center">Tu carrito está vacío</p>';
+                totalLabel.innerText = '0.00€';
+                return;
+            }
+            
+            let html = '', total = 0;
+            window.cart.forEach((item, index) => {
+                html += `<div class="flex justify-between items-center mb-2 text-sm border-b pb-1">
+                            <span>${item.name}</span>
+                            <div class="flex items-center gap-2">
+                                <span>${item.price.toFixed(2)}€</span>
+                                <button onclick="removeFromCart(${index})" class="text-red-400 hover:text-red-600">×</button>
+                            </div>
+                         </div>`;
+                total += item.price;
+            });
+            itemsContainer.innerHTML = html;
+            totalLabel.innerText = total.toFixed(2) + '€';
+        }
+
+        function removeFromCart(index) {
+            window.cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        function goToCheckout() { 
+            toggleCart(); 
+            document.getElementById('asistente-pedido').scrollIntoView(); 
+        }
+
+        function formatOrder() {
+            if (window.cart.length === 0) {
+                alert("El carrito está vacío");
+                return;
+            }
+            document.getElementById('order-preview-container').classList.remove('hidden');
+            let total = window.cart.reduce((sum, item) => sum + item.price, 0);
+            let summary = window.cart.map(item => `- ${item.name} (${item.price.toFixed(2)}€)`).join('\n');
+            document.getElementById('order-preview').innerText = `RESUMEN DEL PEDIDO:\n${summary}\n\nTOTAL: ${total.toFixed(2)}€`;
+        }
+
         window.sendOrder = async function() {
-            // سحب رقم الهاتف والتأكد منه
             const phoneInput = document.getElementById('customer-phone').value;
             if (!phoneInput || phoneInput.length < 8) {
-                alert("Por favor, introduce un número de teléfono válido para contactarte.");
+                alert("Por favor, introduce un número de teléfono válido.");
                 return;
             }
 
             if (window.cart.length === 0) return;
 
             const btn = document.getElementById('final-submit-btn');
-            btn.innerText = "Procesando...";
+            btn.innerText = "Enviando...";
             btn.disabled = true;
 
             const orderData = {
-                phone: phoneInput, // حفظ الهاتف هنا
+                phone: phoneInput,
                 items: window.cart,
                 total: window.cart.reduce((sum, item) => sum + item.price, 0),
                 timestamp: new Date().toLocaleString(),
@@ -164,51 +294,16 @@
             };
 
             try {
-                // إرسال البيانات إلى Firestore
                 const docRef = await db.collection("orders").add(orderData);
-                
-                // الانتقال لصفحة النجاح مع تمرير رقم الطلب
                 window.location.href = "success.html?order=" + docRef.id; 
-                
             } catch (error) {
                 console.error(error);
-                alert("Error: Asegúrate de activar 'Firestore Database' y poner las Rules en 'true'.");
+                alert("Error al enviar el pedido. Verifique su conexión.");
             } finally {
                 btn.innerText = "ENVIAR PEDIDO A COCINA 🍕";
                 btn.disabled = false;
             }
         };
-
-        window.cart = [];
-        function toggleCart() { document.getElementById('cart-sidebar').classList.toggle('open'); }
-        function addToCart(name, price) {
-            window.cart.push({ name, price });
-            updateCartUI();
-        }
-        function updateCartUI() {
-            const itemsContainer = document.getElementById('cart-items');
-            const totalLabel = document.getElementById('cart-total');
-            document.getElementById('cart-count').innerText = window.cart.length;
-            if (window.cart.length === 0) {
-                itemsContainer.innerHTML = '<p class="text-gray-400 italic text-sm text-center">Tu carrito está vacío</p>';
-                totalLabel.innerText = '0.00€';
-                return;
-            }
-            let html = '', total = 0;
-            window.cart.forEach((item, index) => {
-                html += `<div class="flex justify-between mb-2"><span>${item.name}</span><span>${item.price.toFixed(2)}€</span></div>`;
-                total += item.price;
-            });
-            itemsContainer.innerHTML = html;
-            totalLabel.innerText = total.toFixed(2) + '€';
-        }
-        function goToCheckout() { toggleCart(); document.getElementById('asistente-pedido').scrollIntoView(); }
-        function formatOrder() {
-            if (window.cart.length === 0) return;
-            document.getElementById('order-preview-container').classList.remove('hidden');
-            let summary = window.cart.map(item => `- ${item.name}`).join('\n');
-            document.getElementById('order-preview').innerText = `RESUMEN:\n${summary}`;
-        }
     </script>
 </body>
 </html>
